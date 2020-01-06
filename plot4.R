@@ -25,7 +25,7 @@ legend("topright", legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3
 
 
 #plot 4
-plot(strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S"),as.numeric(data$Global_reactive_power), type="l", xlab="datetime", ylab="Global_reactive_power")
+plot(strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S"),as.numeric(data$Global_reactive_power)*0.1, type="l", xlab="datetime", ylab="Global_reactive_power")
 
 #globol title
 title("Plot 4")
