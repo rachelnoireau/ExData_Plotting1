@@ -1,17 +1,17 @@
 
-#data <- read.table("C:\\Users\\rnoireau\\Downloads\\exdata_data_household_power_consumption\\household_power_consumption.txt", sep = ";", header = TRUE, na.strings="?", stringsAsFactors=FALSE)
+data <- read.table("C:\\Users\\rnoireau\\Downloads\\exdata_data_household_power_consumption\\household_power_consumption.txt", sep = ";", header = TRUE, na.strings="?", stringsAsFactors=FALSE)
 
-#data <- subset(data, as.Date(data$Date,"%d/%m/%Y") == as.Date("01/02/2007","%d/%m/%Y") | as.Date(data$Date,"%d/%m/%Y") == as.Date("02/02/2007","%d/%m/%Y"))
+data <- subset(data, as.Date(data$Date,"%d/%m/%Y") == as.Date("01/02/2007","%d/%m/%Y") | as.Date(data$Date,"%d/%m/%Y") == as.Date("02/02/2007","%d/%m/%Y"))
 
 #share the windows
 par(mfrow=c(2,2))
 
 #plot 1
-plot(strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S"),as.numeric(data$Global_active_power)*0.002, type="l", xlab="datetime", ylab="GLobal Active Power(kilowatts)")
+plot(strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S"),as.numeric(data$Global_active_power), type="l", xlab="datetime", ylab="GLobal Active Power(kilowatts)")
 
 
 #plot 2
-plot(strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S"),as.numeric(data$Voltage)*0.1, type="l", xlab="datetime", ylab="Voltage")
+plot(strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S"),as.numeric(data$Voltage), type="l", xlab="datetime", ylab="Voltage")
 
 #plot 3
 
@@ -25,7 +25,7 @@ legend("topright", legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3
 
 
 #plot 4
-plot(strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S"),as.numeric(data$Global_reactive_power)*0.1, type="l", xlab="datetime", ylab="Global_reactive_power")
+plot(strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S"),as.numeric(data$Global_reactive_power), type="l", xlab="datetime", ylab="Global_reactive_power")
 
 #globol title
 title("Plot 4")
